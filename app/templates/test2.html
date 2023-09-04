@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block content %}
+    <div>
+        {{product.name}}
+        {{product.category}}
+        <img src="{{ product.image.url }}" width=500px alt="image">
+    </div>
+
+{% endblock %}

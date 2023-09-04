@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block content %}
+    <div>
+        <h1> Categories </h1>
+        <a href="/">All Products</a>
+        <br>
+
+        {% for obj in categories %}
+        <a href="/?category_id={{obj.id}}">{{ obj.category}}</a>
+        <br>
+
+        {% endfor %}
+    </div>
+
+    {% for product in products %}
+    <a href="/product/{{product.id}}">
+        <img src="{{ product.image.url }}" width=500px alt="image">
+    </a>
+        <br>
+    {% endfor %}
+{% endblock %}
