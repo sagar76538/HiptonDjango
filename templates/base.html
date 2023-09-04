@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hipton</title>
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200i,300,300i,400,600,700">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta name='robots' content='max-image-preview:large' />
+  <!--	<link rel='dns-prefetch' href='http://s.w.org/' />-->
+  </head>
+  <header>
+    <section class="menubtn hmenubtn" data-spy="affix" data-offset-top="50">
+      <div class="header-left"><button class="menubtnt1"><img class="img-responsive"
+            src="{%static 'image/menubtn2.png' %}"></button><a href="/"><img class="img-responsive" width="100"
+            src="{%static 'image/flogo2.png' %}"></a></div>
+      <div class="header-right ">
+        <ul class="hidden-xs">
+          <li><a href="/">Home</a></li>
+          <li class="active"><a href="https://api.whatsapp.com/send?phone=7834864894">Get in Touch</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+  
+  <body>
+    
+  <section id="lodpopup">
+      <div class="lodlogo"><img class="img-responsive center-block" src="{% static 'image/lodlogo.png' %}"></div>
+  </section>
+
+    {% block content %}
+    
+    {% endblock %}
+  
+  
+    <footer>
+      <section class="top-footer htop-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-7">
+              <div class="footer-left">
+                <div class="footer-logo"><img class="img-responsive" src="{% static 'image/flogo.png' %}" width="100">
+                </div>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-5">
+              <div class="footer-right">
+    
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="copyright hcopyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright-content">
+                <p><span>&copy; Copyright 2023</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sidemenu">
+        <div class="menu-block">
+          <div class="mclose-btn"><button class="menubtnt3"><img class="img-responsive"
+                src="{% static 'image/close.png'%}"></button></div> 
+          <div class="main-menu">
+            <div class="tsearch-box clearfix">
+              <form role="search" method="get" id="form_ser"><input class="form-control" type="text" name="s"
+                  placeholder="Search"><input type="hidden" name="post_type" value="products"><button
+                  type="button" id="sbtn" data-name="s" data-post="products" class="srch-btn"><img
+                    class="img-responsive" src="{% static 'image/search2.png'%}"></button></form>
+            </div>
+            <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="#">Get In Touch</a></li>
+            </ul>
+            <div class="menu-bottom">
+              <p>We are at your assistance 24x7. Get in touch with us on <a href="#">info@hipton.com</a> for any
+                queries.</p>
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/wow.min.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script>$(document).ready(function () {
+			$("#lodpopup").show();
+
+			setTimeout(function () {
+				$("#lodpopup").fadeOut();
+			}
+
+				, 300);
+
+		});
+
+	</script>
+	<script>$('.srch-btn').click(function () {
+			var clicks = $(this).data('clicks');
+			if (clicks) {
+				$(this).attr('type', 'submit');
+			}
+			else {
+				$(".tsearch-box").addClass("tsearch-box2");
+			}
+			$(this).data("clicks", !clicks);
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('ul.tabs li').click(function () {
+				var tab_id = $(this).attr('data-tab');
+
+				$('ul.tabs li').removeClass('current');
+				$('.tab-content').removeClass('current');
+
+				$(this).addClass('current');
+				$("#" + tab_id).addClass('current');
+			})
+
+		})
+	</script>
+</body>
+
+</html>

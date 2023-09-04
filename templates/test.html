@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block content %}
+    <main>
+        <section class="banner2"><img class="img-responsive " src="{% static 'image/bannerbg.png' %}">
+          <div class="banner-content2 clearfix ">
+            <div class="bannerblock1 wow "><img class="img-responsive" src="{% static 'image/tilt2.png' %}"></div>
+            <div class="bannerblock2 wow "><img class="img-responsive center-block" src="{% static 'image/logo2.png' %}">
+              <h2 class="text-white">Professional Light & Wire Cable</h2>
+              <div class="bannerbtn"><a href="https://api.whatsapp.com/send?phone=7834864894" target="_blank">Get In Touch</a><a href="#tabs">View Products</a></div>
+            </div>
+          </div>
+        </section>
+        <section class="best-seller wow ">
+          <div class="container">
+            <div class="row">
+              <div class="container">
+                <div class="col-md-12 col-sm-12">
+                  <div class="heading" style="margin-bottom: 20px;">
+                    <h3>Our Product Categories</h3>
+                  </div>
+                </div>
+                <ul class="tabs" id="tabs">
+                  <li class="tab-link current" data-tab="tab-1"> <a href="/home">All</a></li>
+
+                  {% for obj in categories %}
+                  <li class="tab-link" data-tab="tab-1"><a href="/?category_id={{obj.id}}">{{ obj.category}}</a></li>
+                  {% endfor %}
+
+                  {% comment %} <li class="tab-link" data-tab="tab-4">Fan Regulator</li>
+                  <li class="tab-link" data-tab="tab-5">MCB Box</li>
+                  <li class="tab-link" data-tab="tab-6">Other</li> {% endcomment %}
+                </ul>
+                <!-- TAB 1 LED -->
+                <div id="tab-1" class="tab-content current">
+                  <div class="row">
+                        {% for product in products %}
+                        <div class="col-md-4 col-sm-4">
+                        <div class="bseller-box">
+                            <a href="/product/{{product.id}}"><img class="img-responsive" src="{{ product.image.url }}"r><span>{{product.name}}</span></a>
+                        </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+      </main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block content %}
+    <main>
+        <section class="best-seller wow slideInUp details">
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-5 col-sm-12 text-center">
+                            <img src="{{ product.image.url }}" class="img-responsive border mb-2"/>
+                        </div>
+                        <div class="col-md-7 col-sm-12 text-justify">
+                            <h3 class="mt-0">{{product.name}}</h3>
+                            
+                            <div> <h5>Product Specifications </h5>
+                            
+                             <table width="100%" class="specification-table stripped-table">
+                                {% for key, value in product.description.items %}
+                                <tr><td width="50%"><b>{{key}}</b></td> <td>{{value}}</td></tr>
+                                {% endfor %}
+                             </table>
+                            <a href="tel:999999999999" class="callbtn"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </a>
+                            <a href="tel:999999999999" class="whatsappbtn"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whats App </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

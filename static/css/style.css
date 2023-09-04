@@ -1,0 +1,35 @@
+html { scroll-behavior: smooth; }
+
+.specification-table tr td{
+    border: 1px dashed #ddd;
+    padding: 10px 15px;
+}
+.stripped-table tbody tr:nth-child(even) {
+    background-color: #efeff4; /* Light gray color for even rows */
+  }
+  .border{
+    border: 1px solid #ddd;
+  }
+  .mt-0{
+    margin-top: 0;
+  }
+  .callbtn{ 
+    padding: 10px 35px; 
+    display: inline-block;
+    margin-top: 20px;
+    background: #ed1c24;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  .whatsappbtn{
+    padding: 10px 35px; 
+    display: inline-block;
+    margin-top: 20px;
+    background: #0dc143;
+    color: #fff;
+    border-radius: 10px;
+  }
+  .mb-2{
+    margin-bottom: 20px;
+  }
