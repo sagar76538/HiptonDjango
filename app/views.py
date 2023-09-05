@@ -24,7 +24,7 @@ def index(request):
         }
     
     # print(contenxt)
-    return render(request, 'test.html', contenxt)
+    return render(request, 'home.html', contenxt)
 
 
 def get_product(request, id):
@@ -32,5 +32,5 @@ def get_product(request, id):
     context = {
         "product": product
     }
-    return render(request, "test2.html", context)
+    return render(request, "product.html", context)
     
