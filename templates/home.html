@@ -39,7 +39,7 @@
                         {% for product in products %}
                         <div class="col-md-4 col-sm-4">
                         <div class="bseller-box">
-                            <a href="/product/{{product.id}}"><img class="img-responsive" src="{{ product.image.url }}"r><span>{{product.name}}</span></a>
+                            <a href="/product/{{product.id}}"><img class="img-responsive" src="{{ product.image.url }}"r><b styles="color: red;">{{product.name}}<b></a>
                         </div>
                         </div>
                         {% endfor %}
